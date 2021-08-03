@@ -5,12 +5,10 @@ import one.digital.innovation.personapi.dto.MessageResponseDTO;
 import one.digital.innovation.personapi.dto.request.PersonDTO;
 import one.digital.innovation.personapi.entity.Person;
 import one.digital.innovation.personapi.repository.PersonRepository;
-import one.digital.innovation.personapi.utils.PersonUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static one.digital.innovation.personapi.utils.PersonUtils.*;
@@ -41,5 +39,4 @@ public class PersonServiceTest {
                 .message("Created person with ID " + id)
                 .build();
     }
-
 }

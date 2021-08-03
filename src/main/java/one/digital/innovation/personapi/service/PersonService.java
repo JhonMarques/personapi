@@ -8,10 +8,7 @@ import one.digital.innovation.personapi.mapper.PersonMapper;
 import one.digital.innovation.personapi.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 
@@ -30,7 +27,6 @@ public class PersonService {
     public MessageResponseDTO createPerson(PersonDTO personDTO) {
 
         Person personToSave = personMapper.toModel(personDTO);
-
         Person savedPerson = personRepository.save(personToSave);
         return createdMetodResponse(savedPerson.getId(), "Created person with ID ");
     }
@@ -51,7 +47,6 @@ public class PersonService {
 
     public void delete(Long id) throws PersonNotFoundException {
         verifyIfExists(id);
-
         personRepository.deleteById(id);
     }
 
